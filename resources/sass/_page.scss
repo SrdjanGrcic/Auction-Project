@@ -1,0 +1,86 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.language {
+    img{
+        float: right;
+        padding-left: 5px;      
+    }
+}
+
+.page{
+    background-color: $page-bg;
+    position: relative;
+    border: 2px solid $auctionBlue;
+    padding: 1px;
+}
+
+.navResponsive{
+    margin: 0px 15px;
+    background-color: $auctionBlue;
+    a{
+        color: white;
+    }
+}
+
+section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: $auctionBlue;
+    font-weight: bold;
+    p{
+        text-align: justify;
+        text-indent: 15px;
+    }
+    h4{
+        text-align: center;
+        
+        }
+    h1{
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+.headerContactInfo{
+    padding: 5px 20px;
+    color: $auctionBlue;
+    font-family: $font-family-sans-serif;
+
+    h4{
+        line-height: 0.8;
+    }
+}
+
+.slideshow_border{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+footer{
+    background-color: $auctionBlue;
+    text-align: -webkit-center;
+
+    color: white;
+    a{
+        color: white;
+    }
+}
+
+  @media (min-width: 768px) {
+      .lgResolutionBackground{
+          background-color: $auctionBlue;
+      }
+  }
+
+  .currentAuctionStyle{
+      table{
+          margin: auto;
+          border: 1px solid $auctionBlue;
+      }
+  }
