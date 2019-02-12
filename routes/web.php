@@ -11,30 +11,14 @@
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/current', 'HomeController@currentAuction');
 
-Route::get('/form', function () {
-    return view('pages.bidForm');
-});
+Route::get('/form', 'HomeController@bidForm');
 
-Route::get('/current', function () {
-    return view('pages.currentAuction');
-});
+Route::get('/terms', 'HomeController@terms');
 
-Route::get('/results', function () {
-    return view('pages.results');
-});
+Route::get('/results', 'HomeController@results');
 
-Route::get('/terms', function () {
-    return view('pages.terms');
-});
-
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+Route::get('/contact', 'HomeController@contact');

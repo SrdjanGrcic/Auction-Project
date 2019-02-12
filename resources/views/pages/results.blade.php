@@ -2,6 +2,6 @@
 
 @section('content')
 
-Auction Results
+    Auction Results
 
 @endsection
