@@ -4,7 +4,7 @@ function checkWidth(init) {
       $('nav').removeClass('navResponsive');
       $('#navigationId').addClass('bg-light');
     } else {
-      $('#navigationId').remove().insertAfter($('.slideshowClass'));
+      $('#navigationId').remove().insertAfter($('.slideshowStyle'));
       $('#navigationId').removeClass('bg-light');
       $('nav').addClass('navResponsive');
     }

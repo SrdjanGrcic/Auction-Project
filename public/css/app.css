@@ -10502,7 +10502,7 @@ a.text-dark:focus {
   padding-left: 5px;
 }
 
-.page {
+.pageStyle {
   background-color: #fcefe0;
   position: relative;
   border: 2px solid #035096;
@@ -10512,6 +10512,7 @@ a.text-dark:focus {
 
 .navResponsive {
   background-color: #035096;
+  height: 30px;
 }
 
 .navResponsive a {
@@ -10541,20 +10542,20 @@ section h1 {
   font-weight: bold;
 }
 
-.headerContactInfo {
+.headerData {
   padding: 5px 20px;
   color: #035096;
 }
 
-.headerContactInfo h4 {
+.headerData h4 {
   line-height: 0.8;
   font-size: 15px;
 }
 
-.slideshowClass {
+.slideshowStyle {
   border-top: 3px solid black;
   border-bottom: 3px solid black;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 footer {

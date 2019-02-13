@@ -1,9 +1,9 @@
-<div class="headerContactInfo">
+<div class="headerData">
     <div class="row">
         <div class="col-xs-2 hidden-xs">
-            <img src="images/logo_mobile.png" class="d-none d-sm-block" alt="logo">
+            <img src="images/135_logo.png" class="d-none d-sm-block mr-2" alt="logo">
         </div>
-        <div class="col-xs-6 headerInfo">
+        <div class="col-xs-6 contactData">
 
             <h4>Stamps expertise</h4>
             <h4>100 Rue De Rivoli Paris</h4>
@@ -13,8 +13,8 @@
         </div>
 
         <div class="col-xs-4 language">
-            <a href="en/index.html"><img src="images/en.png" alt=""></a>
-            <a href="#"><img src="images/fr.png" alt=""></a>
+            <a href="#"><img src="images/en.png" alt="Language: English"></a>
+            <a href="#"><img src="images/fr.png" alt="Language: French"></a>
         </div>
     </div>
 </div>

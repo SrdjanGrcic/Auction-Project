@@ -13,7 +13,7 @@
     }
 }
 
-.page{
+.pageStyle{
     background-color: $page-bg;
     position: relative;
     border: 2px solid $auctionBlue;
@@ -23,6 +23,7 @@
 
 .navResponsive{
     background-color: $auctionBlue;
+    height: 30px;
     a{
         color: white;
     }
@@ -48,21 +49,20 @@ section{
     }
 }
 
-.headerContactInfo{
+.headerData{
     padding: 5px 20px;
     color: $auctionBlue;
 
     h4{
         line-height: 0.8;
-        
         font-size: 15px;
     }
 }
 
-.slideshowClass{
+.slideshowStyle{
     border-top: 3px solid black;
     border-bottom: 3px solid black;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 footer{
