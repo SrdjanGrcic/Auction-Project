@@ -24,10 +24,7 @@
             </section>
 
             <footer>
-                &copy;
-                <span id="footerYear"></span>
-                <a href="http://www.google.com">135auctions.com</a>
-                | All Rights Reserved.
+                @include('inc.footer')
             </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
