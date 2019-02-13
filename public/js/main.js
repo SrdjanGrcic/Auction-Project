@@ -1,12 +1,12 @@
 function checkWidth(init) {
     if ($(window).width() < 480) {
       $('#navigationId').remove().insertBefore($('header'));
-      $('ul').addClass('navbar-nav');
       $('nav').removeClass('navResponsive');
+      $('#navigationId').addClass('bg-light');
     } else {
-      $('#navigationId').remove().insertAfter($('header'));
+      $('#navigationId').remove().insertAfter($('.slideshowClass'));
+      $('#navigationId').removeClass('bg-light');
       $('nav').addClass('navResponsive');
-      $('ul').removeClass('navbar-nav');
     }
   }
 
@@ -18,3 +18,4 @@ function checkWidth(init) {
     });
   });
   
+  document.getElementById("footerYear").innerHTML = new Date().getFullYear();

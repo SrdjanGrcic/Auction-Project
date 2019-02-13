@@ -10506,11 +10506,11 @@ a.text-dark:focus {
   background-color: #fcefe0;
   position: relative;
   border: 2px solid #035096;
-  padding: 1px;
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
 }
 
 .navResponsive {
-  margin: 0px 15px;
   background-color: #035096;
 }
 
@@ -10528,10 +10528,12 @@ section {
 section p {
   text-align: justify;
   text-indent: 15px;
+  font-size: 12px;
+  font-weight: 300;
 }
 
 section h4 {
-  text-align: center;
+  font-size: 15px;
 }
 
 section h1 {
@@ -10542,16 +10544,17 @@ section h1 {
 .headerContactInfo {
   padding: 5px 20px;
   color: #035096;
-  font-family: "Nunito", sans-serif;
 }
 
 .headerContactInfo h4 {
   line-height: 0.8;
+  font-size: 15px;
 }
 
-.slideshow_border {
+.slideshowClass {
   border-top: 3px solid black;
   border-bottom: 3px solid black;
+  margin-bottom: 5px;
 }
 
 footer {

@@ -4,7 +4,7 @@
 
 <section>
             
-    <div class="container currentAuctionStyle">
+    <div class="currentAuctionStyle">
         <h4>Summary</h4>
                     
                     <table class="table-condensed center-table table-striped">

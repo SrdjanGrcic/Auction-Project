@@ -17,11 +17,11 @@
     background-color: $page-bg;
     position: relative;
     border: 2px solid $auctionBlue;
-    padding: 1px;
+    font-family: $font-family-sans-serif;
+    font-size: 15px;
 }
 
 .navResponsive{
-    margin: 0px 15px;
     background-color: $auctionBlue;
     a{
         color: white;
@@ -36,10 +36,11 @@ section{
     p{
         text-align: justify;
         text-indent: 15px;
+        font-size: 12px;
+        font-weight: 300;
     }
     h4{
-        text-align: center;
-        
+        font-size: 15px;
         }
     h1{
         text-align: center;
@@ -50,16 +51,18 @@ section{
 .headerContactInfo{
     padding: 5px 20px;
     color: $auctionBlue;
-    font-family: $font-family-sans-serif;
 
     h4{
         line-height: 0.8;
+        
+        font-size: 15px;
     }
 }
 
-.slideshow_border{
+.slideshowClass{
     border-top: 3px solid black;
     border-bottom: 3px solid black;
+    margin-bottom: 5px;
 }
 
 footer{

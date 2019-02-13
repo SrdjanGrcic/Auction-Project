@@ -1,9 +1,9 @@
-<div class="headerContactInfo container">
+<div class="headerContactInfo">
     <div class="row">
         <div class="col-xs-2 hidden-xs">
-            <img src="images/logo_mobile.png" class="hidden-xs" alt="logo">
+            <img src="images/logo_mobile.png" class="d-none d-sm-block" alt="logo">
         </div>
-        <div class="col-xs-6 rightInfo">
+        <div class="col-xs-6 headerInfo">
 
             <h4>Stamps expertise</h4>
             <h4>100 Rue De Rivoli Paris</h4>

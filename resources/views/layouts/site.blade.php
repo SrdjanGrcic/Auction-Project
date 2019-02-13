@@ -5,17 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{config('app.name', '135Auctions')}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/app.css')}}" />
     </head>
     <body>
-        <div class="container page">
+        <div class="page">
             <header>
-                @include('inc.navbar')
-
-                @include('inc.headerInfo')
-                
-                @include('inc.carousel')
+                <div class="container">
+                    @include('inc.navbar')                
+                    @include('inc.headerInfo')
+                    @include('inc.carousel')
+                </div>
             </header>
 
             <section>
@@ -26,17 +25,13 @@
 
             <footer>
                 &copy;
-                <script type="text/javascript">
-                    //<![CDATA[
-                    var d = new Date()
-                    document.write(d.getFullYear())
-                    //]]>
-                </script>
+                <span id="footerYear"></span>
                 <a href="http://www.google.com">135auctions.com</a>
                 | All Rights Reserved.
             </footer>
         </div>
-        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
         <script src="{{asset('js/main.js')}}"></script>
         <script src="\js\app.js"></script>

@@ -1,7 +1,7 @@
 @extends('layouts.site')
 @section('content')
     
-    <div class="container text-center textIndent">
+    <div class="text-center">
                         
         <h4>Welcome to the sale on offers 135auctions.com</h4>
 
