@@ -4,27 +4,27 @@
 
     <form method="post" action="contactform.php">
                             
-        <div class="form-group-lg">
-            <label>Name and Surname:</label>
-            <input type="text" name="name" id="Name" class="contact_input" required>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name:</label>
+            <input  type="text" name="name" id="Name" placeholder="Name" required>
         </div>
                             
-        <div class="form-group-lg">
-            <label>Phone:</label>
-            <input type="text" name="phone" id="Phone" class="contact_input" required>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Phone:</label>
+            <input type="text" name="phone" id="Phone" placeholder="Phone">
         </div>
                             
-        <div class="form-group-lg">
-            <label>Email:</label>
-            <input type="text" name="email" id="Email" class="contact_input" required>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email:</label>
+            <input type="text" name="email" id="Email" placeholder="Email" required>
         </div>
                             
-        <div class="form-group-lg">
-            <label>Message:</label>
-            <textarea id="Message" cols="50" rows="5" name="message"></textarea>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Message:</label>
+            <textarea id="Message" cols="50" rows="5" name="message" placeholder="Message"></textarea>
         </div>
                             
-        <input type="submit" value="send">
+        <button type="submit" class="btn btn-info mb-2">Send</button>
     </form>
 
 @endsection
