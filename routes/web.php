@@ -22,3 +22,8 @@ Route::get('/terms', 'HomeController@terms');
 Route::get('/results', 'HomeController@results');
 
 Route::get('/contact', 'HomeController@contact');
+
+Route::get('/users', 'UserController@index');
+
+
+Route::resource('stamp', 'StampController');

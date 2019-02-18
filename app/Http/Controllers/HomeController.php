@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Stamp;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,10 @@ class HomeController extends Controller
     }
 
     public function currentAuction(){
-        return view('pages.currentAuction');
+
+        $stamps = Stamp::all();
+
+        return view('pages.currentAuction')->with('stamps', $stamps);
     }
 
     public function bidForm(){
@@ -29,4 +33,8 @@ class HomeController extends Controller
     public function contact(){
         return view('pages.contact');
     }
+
+    //public function login(){
+    //    return view('pages.login');
+    //}
 }
