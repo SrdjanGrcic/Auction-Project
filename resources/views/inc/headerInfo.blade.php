@@ -1,7 +1,9 @@
 <div class="headerData">
     <div class="row">
         <div class="col-xs-2 hidden-xs">
-            <img src="images/135_logo.png" class="d-none d-sm-block mr-2" alt="logo">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="images/135_logo.png" class="d-none d-sm-block mr-2" alt="logo_image">
+            </a>
         </div>
         <div class="col-xs-6 contactData">
 
@@ -13,8 +15,43 @@
         </div>
 
         <div class="col-xs-4 language">
-            <a href="#"><img src="images/en.png" alt="Language: English"></a>
-            <a href="#"><img src="images/fr.png" alt="Language: French"></a>
+            <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <li>
+                                <a href="#"><img src="images/en.png" alt="Language: English"></a>
+                                <a href="#"><img src="images/fr.png" alt="Language: French"></a>
+                        </li>
+                        
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
         </div>
     </div>
 </div>
