@@ -14,9 +14,7 @@ class StampController extends Controller
      */
     public function index()
     {
-        $stamps = Stamp::all();
-
-        return view('pages.currentAuction')->with('stamps', $stamps);
+        //
     }
 
     /**

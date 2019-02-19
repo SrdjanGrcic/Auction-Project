@@ -8,22 +8,26 @@
     
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
             
-        <ul class="navbar-nav navbarStyle">
+        <ul class="navbar-nav navbarStyle mx-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="current">Current Auction</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="form">Bid Form</a>
-            </li>
+            @if (!auth::guest())
+                <li class="nav-item">
+                    <a class="nav-link" href="form">Bid Form</a>
+                </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="terms">Terms of Sale</a>
-            </li>    
-            <li class="nav-item">
-                <a class="nav-link" href="results">Results of Auction</a>
             </li>
+            @if (!auth::guest())
+                <li class="nav-item">
+                    <a class="nav-link" href="results">Results of Auction</a>
+                </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="contact">Contact</a>
             </li>
