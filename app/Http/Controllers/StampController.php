@@ -16,7 +16,7 @@ class StampController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -71,6 +71,7 @@ class StampController extends Controller
         $stamp = new Stamp;
         $stamp->name = $request->input('name');
         $stamp->price = $request->input('price');
+        $stamp->user_id = auth()->user()->id;
         $stamp->stamp_image = $fileNameToStore;
         $stamp->save();
 
