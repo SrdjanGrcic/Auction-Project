@@ -23,7 +23,7 @@ class HomeController extends Controller
 
     public function currentAuction(){
 
-        $stamps = Stamp::all();
+        $stamps = Stamp::orderBy('created_at', 'desc')->get();
 
         return view('pages.currentAuction')->with('stamps', $stamps);
     }

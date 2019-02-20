@@ -10558,6 +10558,10 @@ section h1 {
   margin-bottom: 3px;
 }
 
+table img {
+  width: 100px;
+}
+
 footer {
   background-color: #035096;
   text-align: -webkit-center;

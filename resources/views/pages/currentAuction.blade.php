@@ -3,11 +3,10 @@
 @section('content')
 
     <section>
-        <h4>Summary</h4>
+        <h4>List of stamps</h4>
         
         @if(count($stamps) > 0)
         <table class="table">
-            <caption>List of stamps</caption>
             <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
