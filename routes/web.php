@@ -23,10 +23,12 @@ Route::get('/results', 'HomeController@results');
 
 Route::get('/contact', 'HomeController@contact');
 
+Route::get('/insert', 'StampController@create');
+
 Route::get('/users', 'UserController@index');
 
 Route::resource('stamp', 'StampController');
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index');//->name('home');
+Route::get('/dashboard', 'DashboardController@index');

@@ -24,7 +24,9 @@
                         <td>{{$stamp->name}}</td>
                         <td>country</td>
                         <td>{{$stamp->price}}</td>
-                        <td>see image</td>
+                        <td>
+                            <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
+                        </td>
                     </tr>
                 </tbody>
             @endforeach
