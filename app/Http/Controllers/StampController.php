@@ -34,7 +34,7 @@ class StampController extends Controller
      */
     public function create()
     {
-        return view('stamps.create');
+        return view('dashboard.addStamp');
     }
 
     /**

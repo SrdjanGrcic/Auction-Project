@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <h1>Auction Results</h1>
+    <h1><a href="dashboard/results">Auction Results</a></h1>
 
 @endsection

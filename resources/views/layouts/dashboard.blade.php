@@ -15,11 +15,9 @@
     </head>
     <body>
         <div class="pageStyle">
-            <header class="container">
-                @include('inc.navbar') 
-                <div class="info">
-                    @include('inc.headerInfo')
-                    @include('inc.carousel')
+            <header>
+                <div class="container">
+                    @include('inc.dashboardNavbar')
                 </div>
             </header>
 

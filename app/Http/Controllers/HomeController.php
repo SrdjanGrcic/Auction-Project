@@ -28,10 +28,6 @@ class HomeController extends Controller
         return view('pages.currentAuction')->with('stamps', $stamps);
     }
 
-    public function bidForm(){
-        return view('pages.bidForm');
-    }
-
     public function terms(){
         return view('pages.terms');
     }
