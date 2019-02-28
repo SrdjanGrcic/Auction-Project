@@ -10,7 +10,7 @@
                 
         <ul class="navbar-nav navbarStyle mx-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/"><img src="images/back_icon.png"/>Home</a>
+                <a class="nav-link" href="/"><img src="images/back_icon.png" class="back_icon"/>Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('dashboard.current') }}">Current Auction</a>

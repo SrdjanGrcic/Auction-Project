@@ -94,8 +94,12 @@ footer{
       }
   }
 
-  nav{
-    img{
-        width: 15px;
+.back_icon{
+    width: 15px;
+}
+
+form{
+    textarea{
+        width: -webkit-fill-available;
     }
 }

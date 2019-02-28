@@ -6,8 +6,9 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Name</th>
-                    <th>Country</th>
+                    <th>Collection</th>
                     <th>Price</th>
+                    <th>Created by</th>
                     <th>Image</th>
                 </tr>
             </thead>
@@ -17,8 +18,9 @@
                 <tbody>
                     <tr>
                         <td>{{$stamp->name}}</td>
-                        <td>country</td>
+                        <td>collection</td>
                         <td>{{$stamp->price}}</td>
+                        <td>{{$stamp->user_id}}</td>
                         <td>
                             <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
                         </td>
