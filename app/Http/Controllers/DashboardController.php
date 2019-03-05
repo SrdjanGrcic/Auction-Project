@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Stamp;
 use App\User;
+use App\Bid;
 
 class DashboardController extends Controller
 {
@@ -35,10 +37,32 @@ class DashboardController extends Controller
         return view('dashboard.currentAuction')->with('stamps', $stamps);
     }
 
-    public function bidForm(){
-        return view('dashboard.bidForm');
+    //public function bidForm(){
+    //    $stamps = Stamp::orderBy('created_at', 'desc')->get();
+    //    return view('dashboard.bidForm')->with('stamps', $stamps);
+    //}
+
+    public function createBidView(Request $request){
+
+        $stamp = DB::table('stamps')->where('id', $request->stamp_id)->first();
+        return view('dashboard.bidForm')->with('stamp', $stamp);
     }
 
+    public function createBid(Request $request){
+        $this->validate($request, [
+            'bid' => 'required',
+        ]);
+
+        //Create Bid
+        $bid = new Bid;
+        $bid->stamp_id = $request->stamp_id;
+        $bid->user_bid = $request->input('bid');
+        $bid->user_id = auth()->user()->id;
+        $bid->save();
+
+        return redirect('/dashboard/current')->with('success', 'Bid made!');
+    }
+    
     public function auctionResults(){
         return view('dashboard.results');
     }
@@ -47,12 +71,38 @@ class DashboardController extends Controller
         $users = User::orderBy('name', 'asc')->get();
 
         return view('pages.users')->with('users', $users);
-    }    
+    }
+
+    public function showBids(){
+        $bids = Bid::orderBy('user_bid', 'desc')->get();
+
+        $bidsData = DB::table('bids')
+            ->select(
+                'stamps.name',
+                'stamps.price',
+                'bids.user_bid',
+                'users.name as userName'
+            )
+            ->join(
+                'stamps',
+                'stamps.id','bids.stamp_id'
+            )
+            ->join(
+                'users',
+                'users.id', 'bids.user_id'
+            )
+            ->orderBy('stamps.name', 'asc')
+            ->orderBy('bids.user_bid', 'desc')
+            ->get();
+
+        return view('dashboard.bidsList')->with('bids', $bidsData);
+    }
     
     public function addStamp(){
         return view('dashboard.addStamp');
     }
     
+    //Create new stamp
     public function store(Request $request)
     {
         $this->validate($request, [

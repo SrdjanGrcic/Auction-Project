@@ -8,10 +8,8 @@
                     <th>Name</th>
                     <th>Collection</th>
                     <th>Price</th>
-                    <th>Created by</th>
                     <th>Image</th>
-                    <th>Bids</th>
-                    <th></th>
+                    <th>Bid</th>
                 </tr>
             </thead>
             
@@ -22,12 +20,10 @@
                         <td>{{$stamp->name}}</td>
                         <td>collection</td>
                         <td>{{$stamp->price}}</td>
-                        <td>{{$stamp->user_id}}</td>
                         <td>
                             <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
                         </td>
-                        <td><a href="#">No of bids</a></td>
-                        <td><a href="#">Edit</a></td>
+                        <td><a href="#">Add a bids</a></td>
                     </tr>
                 </tbody>
             @endforeach

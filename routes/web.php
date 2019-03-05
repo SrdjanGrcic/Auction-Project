@@ -28,8 +28,14 @@ $router->group(['prefix' => 'dashboard', 'as'=>'dashboard.'], function() use ($r
     $router->get('/current', 'DashboardController@current')->name('current');
     $router->get('/form', 'DashboardController@bidForm')->name('bid_form');
     $router->get('/results', 'DashboardController@auctionResults')->name('results');
+
     $router->get('/users', 'DashboardController@allUsers')->name('users');
+    $router->get('/bids', 'DashboardController@showBids')->name('bids');
+
     $router->get('/add', 'DashboardController@addStamp')->name('add');
+    //$router->get('/stamp_details', 'DashboardController@stampDetails')->name('details');
+    $router->get('/make_bid', 'DashboardController@createBidView')->name('make_bid');
+    $router->post('myBid', array('uses' => 'DashboardController@createBid'));
 });
 
 Route::resource('dashboard', 'DashboardController');
