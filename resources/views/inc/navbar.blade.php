@@ -13,9 +13,6 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="current">Current Auction</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="terms">Terms of Sale</a>
             </li>
             <li class="nav-item">
