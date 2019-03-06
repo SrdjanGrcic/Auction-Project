@@ -51,11 +51,11 @@ class DashboardController extends Controller
         //Create Bid
         $bid = new Bid;
         $bid->stamp_id = $request->stamp_id;
-        $bid->user_bid = $request->input('bid');
+        $bid->bid_value = $request->input('bid');
         $bid->user_id = auth()->user()->id;
         $bid->save();
 
-        return redirect('/dashboard/current')->with('success', 'Bid made!');
+        return redirect('/dashboard/stamps_offer')->with('success', 'Bid made!');
     }
     
     public function auctionResults(){
@@ -75,13 +75,13 @@ class DashboardController extends Controller
     }
 
     public function showBids(){
-        $bids = Bid::orderBy('user_bid', 'desc')->get();
+        $bids = Bid::orderBy('bid_value', 'desc')->get();
 
         $bidsData = DB::table('bids')
             ->select(
                 'stamps.name',
                 'stamps.price',
-                'bids.user_bid',
+                'bids.bid_value',
                 'users.name as userName'
             )
             ->join(
@@ -93,7 +93,7 @@ class DashboardController extends Controller
                 'users.id', 'bids.user_id'
             )
             ->orderBy('stamps.name', 'asc')
-            ->orderBy('bids.user_bid', 'desc')
+            ->orderBy('bids.bid_value', 'desc')
             ->get();
 
         return view('dashboard.bidsList')->with('bids', $bidsData);

@@ -20,7 +20,7 @@
                     <tr>
                         <td>{{$bid->name}}</td>
                         <td>{{$bid->price}}</td>
-                        <td>{{$bid->user_bid}}</td>
+                        <td>{{$bid->bid_value}}</td>
                         <td>{{$bid->userName}}</td>
                     </tr>
                 </tbody>

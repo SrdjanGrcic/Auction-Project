@@ -11,7 +11,7 @@
             you require any further information.
             The collection is also available to see physically, upon request at our Paris office.
             The auction deadline for the bids has been set for May 15th at 12:00.
-            Offer you can see in our online <a href="/dashboard/current"> catalogue</a>.
+            Offer you can see in our online <a href="/dashboard/stamps_offer"> catalogue</a>.
         </p>
         
         <a href="/dashboard/current">
