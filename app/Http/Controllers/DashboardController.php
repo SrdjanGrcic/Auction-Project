@@ -27,20 +27,15 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.userDashboard');
+        return view('dashboard.Dashboard');
     }
 
-    public function current()
+    public function stampsOffer()
     {
         $stamps = Stamp::orderBy('created_at', 'desc')->get();
 
-        return view('dashboard.currentAuction')->with('stamps', $stamps);
+        return view('dashboard.stampsOffer')->with('stamps', $stamps);
     }
-
-    //public function bidForm(){
-    //    $stamps = Stamp::orderBy('created_at', 'desc')->get();
-    //    return view('dashboard.bidForm')->with('stamps', $stamps);
-    //}
 
     public function createBidView(Request $request){
 
@@ -67,10 +62,16 @@ class DashboardController extends Controller
         return view('dashboard.results');
     }
 
-    public function allUsers(){
+    public function showAllUsers(){
         $users = User::orderBy('name', 'asc')->get();
 
         return view('pages.users')->with('users', $users);
+    }
+
+    public function adminStamps(){
+        $stamps = Stamp::orderBy('created_at', 'desc')->get();
+        
+        return view('dashboard.Stamps')->with('stamps', $stamps);
     }
 
     public function showBids(){

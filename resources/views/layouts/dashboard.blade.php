@@ -16,7 +16,7 @@
     <body>
         <div class="pageStyle">
             <header>
-                    @include('inc.dashboardNavbar')
+                    @include('dashboard.inc.dashboardNavbar')
             </header>
 
             <section>

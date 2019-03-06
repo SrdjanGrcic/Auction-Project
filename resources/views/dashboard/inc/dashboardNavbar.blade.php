@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/"><img src="images/back_icon.png" class="back_icon"/>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard.current') }}">Current Auction</a>
+                <a class="nav-link" href="{{ route('dashboard.stamps_offer') }}">Stamps offer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.bids') }}">Bids</a>
@@ -22,10 +22,10 @@
                 <a class="nav-link" href="{{ route('dashboard.results') }}">Results of Auction</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard.users')}}">Users</a>
-            </li>
+                    <a class="nav-link" href="{{ route('dashboard.stamps') }}">Stamps</a>
+                </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard.add') }}">Add</a>
+                <a class="nav-link" href="{{ route('dashboard.users')}}">Users</a>
             </li>
 
             <li class="nav-item">
