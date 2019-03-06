@@ -22,7 +22,7 @@
                     <tbody>
                         <tr>
                             <td>{{$stamp->name}}</td>
-                            <td>collection</td>
+                            <td>{{$stamp->collection}}</td>
                             <td>{{$stamp->price}}</td>
                             <td>
                                 <img src="/storage/stamp_images/{{$stamp->stamp_image}}">

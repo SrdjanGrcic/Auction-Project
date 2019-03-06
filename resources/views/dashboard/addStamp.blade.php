@@ -10,6 +10,10 @@
         {{Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Name'])}}
     </div>
     <div class="form-group">
+        {{Form::label('collection', 'Collection')}}
+        {{Form::text('collection', '', ['class' => 'form-control', 'placeholder'=>'Collection'])}}
+    </div>
+    <div class="form-group">
         {{Form::label('price', 'Price')}}
         {{Form::text('price', '', ['class' => 'form-control', 'placeholder'=>'Price'])}}
     </div>

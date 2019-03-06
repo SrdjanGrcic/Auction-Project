@@ -26,13 +26,13 @@
             <tbody>
                 <tr>
                     <td>{{$stamp->name}}</td>
-                    <td>collection</td>
+                    <td>{{$stamp->collection}}</td>
                     <td>{{$stamp->price}}</td>
-                    <td>{{$stamp->user_id}}</td>
+                    <td>{{$stamp->userName}}</td>
                     <td>
                         <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
                     </td>
-                    <td><a href="#">No of bids</a></td>
+                <td><a href="#">{{$stamp->total_bids}}</a></td>
                     <td><a href="#">Edit</a></td>
                 </tr>
             </tbody>

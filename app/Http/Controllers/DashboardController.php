@@ -54,6 +54,9 @@ class DashboardController extends Controller
         $bid->bid_value = $request->input('bid');
         $bid->user_id = auth()->user()->id;
         $bid->save();
+        
+        db::table('stamps')
+            ->whereId($request->stamp_id)->increment('total_bids');
 
         return redirect('/dashboard/stamps_offer')->with('success', 'Bid made!');
     }
@@ -69,8 +72,23 @@ class DashboardController extends Controller
     }
 
     public function adminStamps(){
-        $stamps = Stamp::orderBy('created_at', 'desc')->get();
         
+        $stamps = DB::table('stamps')
+            ->select(
+                'stamps.name',
+                'stamps.collection',
+                'stamps.price',
+                'stamps.stamp_image',
+                'stamps.total_bids',
+                'users.name as userName'                
+            )
+            ->join(
+                'users',
+                'users.id', 'stamps.user_id'
+            )
+            ->orderBy('stamps.created_at', 'desc')
+            ->get();
+
         return view('dashboard.Stamps')->with('stamps', $stamps);
     }
 
@@ -108,6 +126,7 @@ class DashboardController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'collection' => 'required',
             'price' => 'required',
             'stamp_image' => 'image|nullable|max:1999'
         ]);
@@ -131,9 +150,11 @@ class DashboardController extends Controller
         //Create Stamp
         $stamp = new Stamp;
         $stamp->name = $request->input('name');
+        $stamp->collection = $request->input('collection');
         $stamp->price = $request->input('price');
         $stamp->user_id = auth()->user()->id;
         $stamp->stamp_image = $fileNameToStore;
+        $stamp->total_bids = 0;
         $stamp->save();
 
         return redirect('/dashboard/stamps')->with('success', 'Stamp created');
