@@ -1,6 +1,6 @@
 <nav class="container navbar navbar-light navbar-expand-md bg-light">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="images/135_logo.png" class="d-block d-sm-none" alt="logo">
+        <img src="/images/135_logo.png" class="d-block d-sm-none" alt="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
                 
         <ul class="navbar-nav navbarStyle mx-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/"><img src="images/back_icon.png" class="back_icon"/>Home</a>
+                <a class="nav-link" href="/"><img src="/images/back_icon.png" class="back_icon"/>Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.stamps_offer') }}">Stamps offer</a>

@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 @section('content')
     
     <div class="text-center">
@@ -14,7 +14,7 @@
             Offer you can see in our online <a href="/dashboard/stamps_offer"> catalogue</a>.
         </p>
         
-        <a href="/dashboard/current">
+        <a href="/dashboard/stamps_offer">
             <img src="../images/cover.jpg" alt="Online catalogue" title="Online catalogue">
         </a>
     </div>

@@ -8,7 +8,7 @@
         <meta name="csrf-token" content="{{csrf_token()}}">
         <title>{{config('app.name', '135Auctions')}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="images/135.png">
+        <link rel="icon" href="/images/135.png">
         
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/app.css')}}" />

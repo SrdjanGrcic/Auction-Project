@@ -136,6 +136,6 @@ class DashboardController extends Controller
         $stamp->stamp_image = $fileNameToStore;
         $stamp->save();
 
-        return redirect('/dashboard/current')->with('success', 'Stamp created');
+        return redirect('/dashboard/stamps')->with('success', 'Stamp created');
     }
 }
