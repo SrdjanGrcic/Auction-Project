@@ -29,6 +29,10 @@ $router->group(['prefix' => 'dashboard', 'as'=>'dashboard.'], function() use ($r
 
     $router->get('/users', 'DashboardController@showAllUsers')->name('users');
     $router->get('/stamps', 'DashboardController@adminStamps')->name('stamps');
+    
+    $router->get('/edit_stamp', 'DashboardController@createEditStampView')->name('edit_stamp');
+    $router->post('myStampUpdate', array('uses' => 'StampController@update'));
+
     $router->get('/bids', 'DashboardController@showBids')->name('bids');
 
     $router->get('/add', 'DashboardController@addStamp')->name('add');
@@ -37,4 +41,7 @@ $router->group(['prefix' => 'dashboard', 'as'=>'dashboard.'], function() use ($r
     $router->post('myBid', array('uses' => 'DashboardController@createBid'));
 });
 
-Route::resource('dashboard', 'DashboardController');
+Route::resources([
+    'dashboard' => 'DashboardController',
+    'stamp' => 'StampController'
+]);

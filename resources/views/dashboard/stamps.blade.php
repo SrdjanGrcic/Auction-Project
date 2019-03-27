@@ -33,7 +33,7 @@
                         <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
                     </td>
                 <td><a href="#">{{$stamp->total_bids}}</a></td>
-                    <td><a href="#">Edit</a></td>
+                    <td><a href="{{ route('dashboard.edit_stamp', ['stamp_id' => $stamp->id]) }}">Edit</a></td>
                 </tr>
             </tbody>
         @endforeach

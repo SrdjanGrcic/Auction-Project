@@ -110,7 +110,48 @@ class StampController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $stamp = Stamp::find($id);
+        if($stamp!=null){
+            try{
+                $this->validate($request, [
+                    'name' => 'required',
+                    'collection' => 'required',
+                    'price' => 'required',
+                    'stamp_image' => 'image|nullable|max:1999'
+                ]);
+            }
+            catch(\Exception $e){
+                \Debugbar::log('Validation error: '. $e->getMessage());
+                return redirect('/dashboard/stamps')->with('error', 'Validation error: '.$e->getMessage());
+            }
+
+            $stamp->name = $request->name;
+            $stamp->collection = $request->collection;
+            $stamp->price = $request->price;
+            
+            //Handle File Upload
+            if($request->hasFile('stamp_image')){
+                //get filename with the extention
+                $filenameWithExt = $request->file('stamp_image')->getClientOriginalName();
+                //Get just filename
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                //get just ext
+                $extension = $request->file('stamp_image')->getClientOriginalExtension();
+                //Filename to  store
+                $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                //Upload image
+                $path = $request->file('stamp_image')->storeAs('public/stamp_images', $fileNameToStore);
+
+                $stamp->stamp_image = $fileNameToStore;
+            }           
+        
+            $stamp->save();
+
+            return redirect('/dashboard/stamps')->with('success', 'Stamp updated.');
+        }
+        else{
+            return redirect('/dashboard')->with('error', 'Stamp does not exist in a database.');
+        }
     }
 
     /**
