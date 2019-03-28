@@ -9,6 +9,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Stamp</th>
+                    <th>Collection</th>
                     <th>Price</th>
                     <th>Bid</th>
                     <th>User</th>
@@ -19,6 +20,7 @@
                 <tbody>
                     <tr>
                         <td>{{$bid->name}}</td>
+                        <td>{{$bid->collection}}</td>
                         <td>{{$bid->price}}</td>
                         <td>{{$bid->bid_value}}</td>
                         <td>{{$bid->userName}}</td>

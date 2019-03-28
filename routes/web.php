@@ -33,12 +33,13 @@ $router->group(['prefix' => 'dashboard', 'as'=>'dashboard.'], function() use ($r
     $router->post('updateStamp', array('uses' => 'StampController@update'));
     $router->get('/stamps/offer', 'StampController@index')->name('stamps/offer');
 
-    $router->get('/make_bid', 'DashboardController@createBidView')->name('make_bid');
-    $router->get('/bids', 'DashboardController@showBids')->name('bids');
+    $router->get('/bid/{id}/show', 'BidController@show')->name('make_bid');
+    $router->get('/bids', 'BidController@index')->name('bids');
     $router->get('/form', 'DashboardController@bidForm')->name('bid_form');
     $router->post('createBid', array('uses' => 'DashboardController@createBid'));
 });
 
 Route::resources([
-    'stamp' => 'StampController'
+    'stamp' => 'StampController',
+    'bid' => 'BidController'
 ]);

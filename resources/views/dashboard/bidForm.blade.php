@@ -22,7 +22,7 @@ Bid Form
     
     <hr/>
 
-    {!! Form::open(['action' => 'DashboardController@createBid', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
+    {!! Form::open(['action' => 'BidController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
     <div class="row">
         {{Form::label('bid', 'Bid', ['class' => 'col-2 col-form-label'])}}
         {{Form::text('bid', '', ['class' => 'col-6 form-control border border-primary', 'placeholder'=>'Bid'])}}

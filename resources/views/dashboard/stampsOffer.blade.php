@@ -28,7 +28,7 @@
                                 <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
                             </td>
                             <td>
-                                <a href="{{ route('dashboard.make_bid', ['stamp_id' => $stamp->id]) }}">Bid</a>
+                                <a href="/dashboard/bid/{{ $stamp->id}}/show">Bid</a>
                             </td>
                         </tr>
                     </tbody>

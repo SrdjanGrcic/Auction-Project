@@ -29,30 +29,6 @@ class DashboardController extends Controller
     {
         return view('dashboard.Dashboard');
     }
-
-    public function createBidView(Request $request){
-
-        $stamp = DB::table('stamps')->where('id', $request->stamp_id)->first();
-        return view('dashboard.bidForm')->with('stamp', $stamp);
-    }
-
-    public function createBid(Request $request){
-        $this->validate($request, [
-            'bid' => 'required',
-        ]);
-
-        //Create Bid
-        $bid = new Bid;
-        $bid->stamp_id = $request->stamp_id;
-        $bid->bid_value = $request->input('bid');
-        $bid->user_id = auth()->user()->id;
-        $bid->save();
-        
-        db::table('stamps')
-            ->whereId($request->stamp_id)->increment('total_bids');
-
-        return redirect('/dashboard/stamps_offer')->with('success', 'Bid made!');
-    }
     
     public function auctionResults(){
         return view('dashboard.results');
@@ -84,30 +60,5 @@ class DashboardController extends Controller
             ->get();
 
         return view('dashboard.Stamps')->with('stamps', $stamps);
-    }
-
-    public function showBids(){
-        $bids = Bid::orderBy('bid_value', 'desc')->get();
-
-        $bidsData = DB::table('bids')
-            ->select(
-                'stamps.name',
-                'stamps.price',
-                'bids.bid_value',
-                'users.name as userName'
-            )
-            ->join(
-                'stamps',
-                'stamps.id','bids.stamp_id'
-            )
-            ->join(
-                'users',
-                'users.id', 'bids.user_id'
-            )
-            ->orderBy('stamps.name', 'asc')
-            ->orderBy('bids.bid_value', 'desc')
-            ->get();
-
-        return view('dashboard.bidsList')->with('bids', $bidsData);
     }
 }
