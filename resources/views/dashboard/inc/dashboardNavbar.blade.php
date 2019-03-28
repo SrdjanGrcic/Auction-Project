@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/"><img src="/images/back_icon.png" class="back_icon"/>Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard.stamps_offer') }}">Stamps offer</a>
+                <a class="nav-link" href="{{ route('dashboard.stamps/offer') }}">Stamps offer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.bids') }}">Bids</a>

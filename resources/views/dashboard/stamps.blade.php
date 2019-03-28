@@ -5,7 +5,7 @@
 <section>
     <h4>List of stamps</h4>
     
-    <a href="{{ route('dashboard.add') }}" class="btn btn-primary float-right mb-2">Add new</a>
+    <a href="{{ route('dashboard./stamps/create') }}" class="btn btn-primary float-right mb-2">Add new</a>
     
     @if(count($stamps) > 0)
     <table class="table">
@@ -33,7 +33,7 @@
                         <img src="/storage/stamp_images/{{$stamp->stamp_image}}">
                     </td>
                 <td><a href="#">{{$stamp->total_bids}}</a></td>
-                    <td><a href="{{ route('dashboard.edit_stamp', ['stamp_id' => $stamp->id]) }}">Edit</a></td>
+                    <td><a href="/dashboard/stamps/{{ $stamp->id}}/edit">Edit</a></td>
                 </tr>
             </tbody>
         @endforeach

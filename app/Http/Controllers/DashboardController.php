@@ -30,13 +30,6 @@ class DashboardController extends Controller
         return view('dashboard.Dashboard');
     }
 
-    public function stampsOffer()
-    {
-        $stamps = Stamp::orderBy('created_at', 'desc')->get();
-
-        return view('dashboard.stampsOffer')->with('stamps', $stamps);
-    }
-
     public function createBidView(Request $request){
 
         $stamp = DB::table('stamps')->where('id', $request->stamp_id)->first();
@@ -71,7 +64,7 @@ class DashboardController extends Controller
         return view('pages.users')->with('users', $users);
     }
 
-    public function adminStamps(){
+    public function createAdminStampsView(){
         
         $stamps = DB::table('stamps')
             ->select(
@@ -116,113 +109,5 @@ class DashboardController extends Controller
             ->get();
 
         return view('dashboard.bidsList')->with('bids', $bidsData);
-    }
-    
-    public function addStamp(){
-        return view('dashboard.addStamp');
-    }
-
-    //edit stamp view
-    public function createEditStampView(Request $request){
-
-        $stamp = DB::table('stamps')->where('id', $request->stamp_id)->first();
-
-        //$stamp = Stamp::find($request->stamp_id);
-
-        return view('dashboard.editStampView')->with('stamp', $stamp);
-    }
-
-    public function updateStamp(Request $request){
-        \Debugbar::info($request->name);
-        $stamp = DB::table('stamps')->where('id', $request->stamp_id)->first();
-        \Debugbar::log('Update this db stamp: '.$stamp->name);
-        if($stamp!==null){
-            $this->validate($request, [
-                'name' => 'required',
-                'collection' => 'required',
-                'price' => 'required',
-                'stamp_image' => 'image|nullable|max:1999'
-            ]);
-            \Debugbar::log('Update this request stamp: '.$request->name);
-            \Debugbar::log('Update this db stamp: '.$stamp->name);
-        //Create Stamp
-       // $stamp = Stamp::find($request->stamp_id);
-        $stamp->name = $request->name;
-        $stamp->collection = $request->collection;
-        $stamp->price = $request->price;
-            
-        //Handle File Upload
-        if($request->hasFile('stamp_image')){
-            //get filename with the extention
-            $filenameWithExt = $request->file('stamp_image')->getClientOriginalName();
-            //Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //get just ext
-            $extension = $request->file('stamp_image')->getClientOriginalExtension();
-            //Filename to  store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //Upload image
-            $path = $request->file('stamp_image')->storeAs('public/stamp_images', $fileNameToStore);
-
-            $stamp->stamp_image = $fileNameToStore;
-        }           
-        
-        $stamp->save();
-
-        return redirect('/dashboard/stamps')->with('success', 'Stamp created');
-        }
-    }
-    
-    //Create new stamp
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'collection' => 'required',
-            'price' => 'required',
-            'stamp_image' => 'image|nullable|max:1999'
-        ]);
-
-        //Handle File Upload
-        if($request->hasFile('stamp_image')){
-            //get filename with the extention
-            $filenameWithExt = $request->file('stamp_image')->getClientOriginalName();
-            //Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //get just ext
-            $extension = $request->file('stamp_image')->getClientOriginalExtension();
-            //Filename to  store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //Upload image
-            $path = $request->file('stamp_image')->storeAs('public/stamp_images', $fileNameToStore);
-        }else{
-            $fileNameToStore = 'noimage.jpg';
-        }
-
-        //Create Stamp
-        $stamp = new Stamp;
-        $stamp->name = $request->input('name');
-        $stamp->collection = $request->input('collection');
-        $stamp->price = $request->input('price');
-        $stamp->user_id = auth()->user()->id;
-        $stamp->stamp_image = $fileNameToStore;
-        $stamp->total_bids = 0;
-        $stamp->save();
-
-        return redirect('/dashboard/stamps')->with('success', 'Stamp created');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $stamp = Stamp::find($id);
-        $stamp->delete();
-
-        return redirect('/dashboard/stamps')->with('success', 'Stamp deleted.');
     }
 }

@@ -24,7 +24,9 @@ class StampController extends Controller
      */
     public function index()
     {
-        //
+        $stamps = Stamp::orderBy('created_at', 'desc')->get();
+
+        return view('dashboard.stampsOffer')->with('stamps', $stamps);
     }
 
     /**
@@ -47,6 +49,7 @@ class StampController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'collection' => 'required',
             'price' => 'required',
             'stamp_image' => 'image|nullable|max:1999'
         ]);
@@ -70,12 +73,14 @@ class StampController extends Controller
         //Create Stamp
         $stamp = new Stamp;
         $stamp->name = $request->input('name');
+        $stamp->collection = $request->input('collection');
         $stamp->price = $request->input('price');
         $stamp->user_id = auth()->user()->id;
         $stamp->stamp_image = $fileNameToStore;
+        $stamp->total_bids = 0;
         $stamp->save();
 
-        return redirect('/current')->with('success', 'Stamp created');
+        return redirect('/dashboard/stamps')->with('success', 'Stamp created');
     }
 
     /**
@@ -98,7 +103,9 @@ class StampController extends Controller
      */
     public function edit($id)
     {
-        //
+        $stamp = Stamp::find($id);
+
+        return view('dashboard.editStampView')->with('stamp', $stamp);
     }
 
     /**
@@ -162,6 +169,9 @@ class StampController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stamp = Stamp::find($id);
+        $stamp->delete();
+
+        return redirect('/dashboard/stamps')->with('success', 'Stamp deleted.');
     }
 }

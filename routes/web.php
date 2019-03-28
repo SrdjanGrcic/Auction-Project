@@ -23,25 +23,22 @@ Auth::routes();
 
 $router->group(['prefix' => 'dashboard', 'as'=>'dashboard.'], function() use ($router){
     $router->get('/', 'DashboardController@index')->name('index');
-    $router->get('/stamps_offer', 'DashboardController@stampsOffer')->name('stamps_offer');
-    $router->get('/form', 'DashboardController@bidForm')->name('bid_form');
     $router->get('/results', 'DashboardController@auctionResults')->name('results');
 
     $router->get('/users', 'DashboardController@showAllUsers')->name('users');
-    $router->get('/stamps', 'DashboardController@adminStamps')->name('stamps');
+    $router->get('/stamps', 'DashboardController@createAdminStampsView')->name('stamps');
     
-    $router->get('/edit_stamp', 'DashboardController@createEditStampView')->name('edit_stamp');
-    $router->post('myStampUpdate', array('uses' => 'StampController@update'));
+    $router->get('/stamps/create', 'StampController@create')->name('/stamps/create');
+    $router->get('/stamps/{id}/edit', 'StampController@edit')->name('edit_stamp');
+    $router->post('updateStamp', array('uses' => 'StampController@update'));
+    $router->get('/stamps/offer', 'StampController@index')->name('stamps/offer');
 
-    $router->get('/bids', 'DashboardController@showBids')->name('bids');
-
-    $router->get('/add', 'DashboardController@addStamp')->name('add');
-    //$router->get('/stamp_details', 'DashboardController@stampDetails')->name('details');
     $router->get('/make_bid', 'DashboardController@createBidView')->name('make_bid');
-    $router->post('myBid', array('uses' => 'DashboardController@createBid'));
+    $router->get('/bids', 'DashboardController@showBids')->name('bids');
+    $router->get('/form', 'DashboardController@bidForm')->name('bid_form');
+    $router->post('createBid', array('uses' => 'DashboardController@createBid'));
 });
 
 Route::resources([
-    'dashboard' => 'DashboardController',
     'stamp' => 'StampController'
 ]);
