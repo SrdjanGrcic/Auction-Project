@@ -8,7 +8,8 @@
     <a href="{{ route('dashboard./stamps/create') }}" class="btn btn-primary float-right mb-2">Add new</a>
     
     @if(count($stamps) > 0)
-    <table class="table">
+    <table class="table table-responsive">
+        <caption>List of stamps</caption>
         <thead class="thead-dark">
             <tr>
                 <th>Name</th>

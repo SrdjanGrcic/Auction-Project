@@ -6,7 +6,7 @@
             <h4>List of stamps</h4>
             
             @if(count($stamps) > 0)
-            <table class="table">
+            <table class="table table-responsive">
                 <thead class="thead-dark">
                     <tr>
                         <th>Name</th>
