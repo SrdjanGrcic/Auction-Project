@@ -13,12 +13,13 @@
     }
 }
 
-.pageStyle{
+.pageContent{
     background-color: $page-bg;
     position: relative;
     border: 2px solid $auctionBlue;
     font-family: $font-family-sans-serif;
     font-size: 15px;
+    min-height: 100vh;
 }
 
 .navResponsive{
@@ -66,6 +67,7 @@ section{
 }
 
 table{
+    text-align: center;
     img{
         width: 100px;
     }
@@ -78,6 +80,10 @@ table{
 footer{
     background-color: $auctionBlue;
     text-align: -webkit-center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     color: white;
     a{

@@ -10666,12 +10666,13 @@ a.text-dark:focus {
   padding-left: 5px;
 }
 
-.pageStyle {
+.pageContent {
   background-color: #fcefe0;
   position: relative;
   border: 2px solid #035096;
   font-family: "Nunito", sans-serif;
   font-size: 15px;
+  min-height: 100vh;
 }
 
 .navResponsive {
@@ -10722,6 +10723,10 @@ section h1 {
   margin-bottom: 3px;
 }
 
+table {
+  text-align: center;
+}
+
 table img {
   width: 100px;
 }
@@ -10733,6 +10738,10 @@ table img {
 footer {
   background-color: #035096;
   text-align: -webkit-center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: white;
 }
 

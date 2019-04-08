@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/app.css')}}" />
     </head>
     <body>
-        <div class="pageStyle">
+        <div class="pageContent">
             <header>
                     @include('dashboard.inc.dashboardNavbar')
             </header>

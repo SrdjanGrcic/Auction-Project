@@ -32,6 +32,7 @@ $router->group(['prefix' => 'dashboard', 'as'=>'dashboard.'], function() use ($r
     $router->get('/stamps/{id}/edit', 'StampController@edit')->name('edit_stamp');
     $router->post('updateStamp', array('uses' => 'StampController@update'));
     $router->get('/stamps/offer', 'StampController@index')->name('stamps/offer');
+    $router->post('deleteStamp', array('uses' => 'StampController@destroy'));
 
     $router->get('/bid/{id}/show', 'BidController@show')->name('make_bid');
     $router->get('/bids', 'BidController@index')->name('bids');
