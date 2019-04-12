@@ -37,7 +37,7 @@
                     <td><a href="#">{{$stamp->total_bids}}</a></td>
                     <td><a href="/dashboard/stamps/{{ $stamp->id}}/edit">Edit</a></td>
                     <td>
-                    {!!Form::open(['action' => ['StampController@destroy', $stamp->id], 'method' => 'POST'])!!}
+                    {!!Form::open(['action' => ['StampController@destroy', $stamp->id], 'method' => 'POST', 'onsubmit' => 'return ConfirmDelete()'])!!}
                         {{Form::hidden('_method', 'DELETE')}}
                         {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                     {!!Form::close()!!}

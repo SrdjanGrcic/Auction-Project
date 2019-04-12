@@ -4,6 +4,16 @@
 
 <h3>Create stamp</h3>
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 {!! Form::open(['action' => 'StampController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
     <div class="form-group">
         {{Form::label('name', 'Name')}}

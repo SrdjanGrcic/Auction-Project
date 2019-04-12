@@ -19,3 +19,7 @@ function checkWidth(init) {
   });
   
   document.getElementById("footerYear").innerHTML = new Date().getFullYear();
+
+  function ConfirmDelete(){
+    return confirm("Delete stamp?");
+}

@@ -50,7 +50,7 @@ class StampController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'collection' => 'required',
-            'price' => 'required',
+            'price' => 'required|integer',
             'stamp_image' => 'image|nullable|max:1999'
         ]);
 
@@ -103,7 +103,7 @@ class StampController extends Controller
      */
     public function edit($id)
     {
-        $stamp = Stamp::find($id);
+        $stamp = Stamp::findOrFail($id);
 
         return view('dashboard.editStampView')->with('stamp', $stamp);
     }
@@ -117,20 +117,15 @@ class StampController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $stamp = Stamp::find($id);
+        $stamp = Stamp::findOrFail($id);
+        
         if($stamp!=null){
-            try{
-                $this->validate($request, [
-                    'name' => 'required',
-                    'collection' => 'required',
-                    'price' => 'required',
-                    'stamp_image' => 'image|nullable|max:1999'
-                ]);
-            }
-            catch(\Exception $e){
-                \Debugbar::log('Validation error: '. $e->getMessage());
-                return redirect('/dashboard/stamps')->with('error', 'Validation error: '.$e->getMessage());
-            }
+            $this->validate($request, [
+                'name' => 'required',
+                'collection' => 'required',
+                'price' => 'required|integer',
+                'stamp_image' => 'image|nullable|max:1999'
+            ]);
 
             $stamp->name = $request->name;
             $stamp->collection = $request->collection;
@@ -157,7 +152,6 @@ class StampController extends Controller
             return redirect('/dashboard/stamps')->with('success', 'Stamp updated.');
         }
         else{
-            return redirect('/dashboard')->with('error', 'Stamp does not exist in a database.');
         }
     }
 
