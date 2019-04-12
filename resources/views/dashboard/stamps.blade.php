@@ -3,10 +3,9 @@
 @section('content')
 
 <section>
-    <h4>List of stamps</h4>
-    
-    <a href="{{ route('dashboard./stamps/create') }}" class="btn btn-primary float-right mb-2">Add new</a>
-    
+    <h3>All stamps</h3>
+    <hr/>
+
     @if(count($stamps) > 0)
     <table class="table table-responsive">
         <caption>List of stamps</caption>
@@ -19,7 +18,9 @@
                 <th>Image</th>
                 <th>Bids</th>
                 <th></th>
-                <th></th>
+                <th>
+                    <a href="{{ route('dashboard./stamps/create') }}" class="btn btn-primary float-right mb-2">Add</a>
+                </th>
             </tr>
         </thead>
         

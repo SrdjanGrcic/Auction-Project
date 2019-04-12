@@ -3,7 +3,7 @@
 @section('content')
 
 <h3>Update stamp</h3>
-
+<hr/>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

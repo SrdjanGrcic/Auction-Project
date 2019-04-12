@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>Users list</h1>
+    <h3>Users</h3>
+    <hr/>
 
     @if(count($users) > 0)
         <table class="table">

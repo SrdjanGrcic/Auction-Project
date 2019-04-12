@@ -37,7 +37,7 @@ class DashboardController extends Controller
     public function showAllUsers(){
         $users = User::orderBy('name', 'asc')->get();
 
-        return view('pages.users')->with('users', $users);
+        return view('dashboard.users')->with('users', $users);
     }
 
     public function createAdminStampsView(){

@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>Bids list</h1>
+    <h3>Bids list</h3>
+    <hr/>
 
     @if(count($bids) > 0)
         <table class="table">

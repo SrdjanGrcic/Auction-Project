@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <h1><a href="dashboard/results">Auction Results</a></h1>
-
+    <div class="text-center">
+        <h3><a href="dashboard/results">Auction Results</a></h3>
+    </div>
 @endsection

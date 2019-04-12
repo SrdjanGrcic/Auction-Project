@@ -3,9 +3,10 @@
 @section('content')
 
     <section>
-            <h4>List of stamps</h4>
-            
-            @if(count($stamps) > 0)
+        <h3>Stamps</h3>
+        <hr/>
+
+        @if(count($stamps) > 0)
             <table class="table table-responsive">
                 <thead class="thead-dark">
                     <tr>
@@ -32,11 +33,10 @@
                             </td>
                         </tr>
                     </tbody>
-                @endforeach
-                
+                @endforeach        
             </table>
-            @else
-                <p>No stamps found</p>
-            @endif
-        </section>
+        @else
+            <p>No stamps found</p>
+        @endif
+    </section>
 @endsection

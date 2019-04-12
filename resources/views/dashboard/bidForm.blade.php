@@ -2,8 +2,8 @@
 
 @section('content')
 
-Bid Form
-<hr/>
+    <h3>Bid Form</h3>
+    <hr/>
 
     <div class="row">
         <div class="col-7">
