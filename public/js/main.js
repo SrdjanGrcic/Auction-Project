@@ -4,7 +4,7 @@ function checkWidth(init) {
       $('nav').removeClass('navResponsive');
       $('#navigationId').addClass('bg-light');
     } else {
-      $('#navigationId').remove().insertAfter($('.slideshowStyle'));
+      $('#navigationId').remove().insertAfter($('.info'));
       $('#navigationId').removeClass('bg-light');
       $('nav').addClass('navResponsive');
     }
@@ -19,3 +19,7 @@ function checkWidth(init) {
   });
   
   document.getElementById("footerYear").innerHTML = new Date().getFullYear();
+
+  function ConfirmDelete(){
+    return confirm("Delete stamp?");
+}

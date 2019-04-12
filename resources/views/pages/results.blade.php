@@ -1,7 +1,7 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
 
-    Auction Results
+    <h1><a href="dashboard/results">Auction Results</a></h1>
 
 @endsection

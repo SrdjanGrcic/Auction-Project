@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 @section('content')
     
     <div class="text-center">
@@ -11,9 +11,10 @@
             you require any further information.
             The collection is also available to see physically, upon request at our Paris office.
             The auction deadline for the bids has been set for May 15th at 12:00.
+            Offer you can see in our online <a href="/dashboard/stamps_offer"> catalogue</a>.
         </p>
         
-        <a href="/currentAuction">
+        <a href="/dashboard/stamps_offer">
             <img src="../images/cover.jpg" alt="Online catalogue" title="Online catalogue">
         </a>
     </div>
